@@ -19,7 +19,7 @@ import sys
 
 __author__ = "Joao Rodrigues"
 
-USAGE = "usage: ", sys.argv[0], " -<segid> <pdb file>\n"
+USAGE = "usage: " + sys.argv[0] + " -<segid> <pdb file>\n"
 
 def check_input(args):
     """Checks whether to read from stdin/file and validates user input/options."""
@@ -43,7 +43,7 @@ def check_input(args):
                 sys.exit(1)                
         else:
             if not os.path.exists(args[0]):
-                sys.stderr.write('File not found:', args[0], '\n')
+                sys.stderr.write('File not found: ' + args[0] + '\n')
                 sys.stderr.write(USAGE)
                 sys.exit(1)
             pdbfh = open(args[0], 'r')
@@ -51,11 +51,11 @@ def check_input(args):
     elif len(args) == 2:
         # Seg & File
         if not re.match('\-[A-Za-z0-9]', args[0]):
-            sys.stderr.write('Invalid segment ID:', args[0], '\n')
+            sys.stderr.write('Invalid segment ID: ' + args[0] + '\n')
             sys.stderr.write(USAGE)
             sys.exit(1)            
         if not os.path.exists(args[1]):
-            sys.stderr.write('File not found:', args[1], '\n')
+            sys.stderr.write('File not found: ' + args[1] + '\n')
             sys.stderr.write(USAGE)
             sys.exit(1)
         seg = args[0][1:]

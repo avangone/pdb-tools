@@ -19,7 +19,7 @@ import sys
 
 __author__ = "Joao Rodrigues"
 
-USAGE = "usage: ", sys.argv[0], "<pdb file>\n"
+USAGE = "usage: " + sys.argv[0] + " <pdb file>\n"
 
 def check_input(args):
     """Checks whether to read from stdin/file and validates user input/options."""
@@ -34,7 +34,7 @@ def check_input(args):
     elif len(args) == 1:
         # Read from file
         if not os.path.exists(args[0]):
-            sys.stderr.write('File not found:', args[0], '\n')
+            sys.stderr.write('File not found: ' + args[0] + '\n')
             sys.stderr.write(USAGE)
             sys.exit(1)
         pdbfh = open(args[0], 'r')
