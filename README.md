@@ -1,5 +1,6 @@
-Assorted Python scripts to manipulate PDB files
+pdb-tools
 ================================================
+Set of utility scripts in python to manipulate PDB files
 
 About
 ---------
@@ -29,3 +30,18 @@ Requirements
 ------------
 
 * Python 2.5+ (not tested, might work on earlier versions)
+                                                             
+Examples
+------------
+
+```
+# Renumber structure from 1 to n
+cat 1CTF.pdb | pdb_reres.py -1  
+
+# Extract chain A from PDB file
+cat 1brs.pdb | pdb_selchain.py -A
+./pdb_selchain.py -A 1brs.pdb
+
+# Combine extraction and renumbering
+./pdb_selchain.py -D 1brs.pdb | ./pdb_reres -1
+```
