@@ -15,15 +15,19 @@ so I rewrote the scripts in Python.
 Scripts
 -----------
 * pdb_chain / pdb_seg / pdb_b / pdb_occ
+
    Set the chain/segment/b-factor/occupancy fields to a particular string. Chains are restricted to 1 character, segments to four, b-factor and occupancy are floats.
                                                                                                                    
 * pdb_reres / pdb_reatom
+
    Renumber the PDB file either on a residue basis or on an atom basis.
 
 * pdb_selchain / pdb_selseg
+
    Extract a portion of the PDB file that matches a particular chain/segment identifier
 
 * pdb_chainxseg / pdb_segxchain
+
    Swap the chain/segment identifier. Restricts the segment identifier to the first character to comply with PDB format.
    
 Requirements
