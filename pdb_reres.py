@@ -34,7 +34,7 @@ def check_input(args):
             sys.exit(1)
     elif len(args) == 1:
         # Resi & Pipe _or_ file & no reres
-        if re.match('\-[0-9]+', args[0]):
+        if re.match('\-[\-0-9]+', args[0]):
             reres = int(args[0][1:])
             if not sys.stdin.isatty():
                 pdbfh = sys.stdin
@@ -50,7 +50,7 @@ def check_input(args):
             reres = 1
     elif len(args) == 2:
         # Chain & File
-        if not re.match('\-[0-9]+', args[0]):
+        if not re.match('\-[\-0-9]+', args[0]):
             sys.stderr.write('Invalid residue number: ' + args[0] + '\n')
             sys.stderr.write(USAGE)
             sys.exit(1)            
@@ -92,6 +92,7 @@ if __name__ == '__main__':
 
     try:
         sys.stdout.write(''.join(new_pdb))
+        sys.stdout.flush()
     except IOError:
         # This is here to catch Broken Pipes
         # for example to use 'head' or 'tail' without
