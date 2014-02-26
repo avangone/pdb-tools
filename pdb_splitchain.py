@@ -45,30 +45,6 @@ def check_input(args):
  
     return pdbfh
 
-# def _extract_chains(fhandle):
-#     """Enclosing logic in a function to speed up a bit"""              
-# 
-#     coord_re = re.compile('^(ATOM|HETATM)')
-#     prev_chain, cur_chain = None, []
-#     fname_root = fhandle.name[:-4] if fhandle.name != '<stdin>' else 'output'
-#            
-#     for line in fhandle:
-#         if coord_re.match(line):
-#             if prev_chain != line[21]:
-#                 # Chain Change
-#                 # Open a new file if we have data to store
-#                 if len(cur_chain) >= 1:
-#                     output_handle.write(''.join(cur_chain))
-#                     output_handle.write('END\n')
-#                     output_handle.close()
-#                     output_handle = open(fname_root + '_' + line[21].strip() + '.pdb', 'w')
-#                 else:
-#                     # For first chain only
-#                     output_handle = open(fname_root + '_' + line[21].strip() + '.pdb', 'w')
-#                 prev_chain = line[21]
-#                 cur_chain = [line]
-#             cur_chain.append(line)  
-
 def _extract_chains(fhandle):
     """"""              
 

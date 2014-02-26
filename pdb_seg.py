@@ -109,6 +109,7 @@ if __name__ == '__main__':
 
     try:
         sys.stdout.write(''.join(new_pdb))
+        sys.stdout.flush()
     except IOError:
         # This is here to catch Broken Pipes
         # for example to use 'head' or 'tail' without
