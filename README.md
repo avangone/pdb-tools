@@ -29,6 +29,10 @@ Scripts
 * pdb_chainxseg / pdb_segxchain
 
    Swap the chain/segment identifier. Restricts the segment identifier to the first character to comply with PDB format.
+
+* pdb_harmonize
+
+   Compares the atoms of two PDB files and keeps only those common to both structures. Useful for RMSD calculations.
    
 Requirements
 ------------
