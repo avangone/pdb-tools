@@ -69,11 +69,10 @@ def check_input(args):
 def _renumber_pdb_residue(fhandle, sresid):
     """Enclosing logic in a function to speed up a bit"""
 
-    coord_re = re.compile('^(ATOM|HETATM)')
     resi = sresid - 1
     prev_resi = None
     for line in fhandle:
-        if coord_re.match(line):
+        if line.startswith(('ATOM', 'HETATM', 'TER')):
             if line[22:26] != prev_resi:
                 prev_resi = line[22:26]
                 resi += 1
