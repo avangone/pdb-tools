@@ -33,6 +33,14 @@ Scripts
 * pdb_harmonize
 
    Compares the atoms of two PDB files and keeps only those common to both structures. Useful for RMSD calculations.
+
+* pdb_delocc
+
+   Removes multiple occupancies from PDB file. Keeps the first atomic location found.
+
+* pdb_toseq
+   
+   Extracts the amino acid sequence as present in the ATOM lines of the PDB file.
    
 Requirements
 ------------
