@@ -57,7 +57,7 @@ def _get_sequence(fhandle):
                ]
 
     three_to_one = dict(aa_codes)
-    _records = set(['ATOM  '])
+    _records = set(['ATOM  ', 'HETATM'])
     
     fhandle = fhandle
     sequence = {}
