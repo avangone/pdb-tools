@@ -13,7 +13,6 @@ of 'piping' several different commands. This is a rewrite of old
 FORTRAN77 code that was taking too much effort to compile. RIP.
 """
 
-from itertools import chain as ichain
 import os
 import re
 import sys
