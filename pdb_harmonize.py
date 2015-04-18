@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-help="""
+"""
 Compares two PDB files.
 
 Takes as input two PDB files: a reference and a target.
@@ -9,7 +9,7 @@ Outputs two PDB files:
   the reference file without atoms not present in the target
   the target file without atoms not present in the reference
 
-(Use this before RMSD calculations with Profit.)
+(e.g. use this before RMSD calculations)
 
 usage: python {0} refe.pdb target.pdb
 """
@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
     cmd_args = sys.argv[1:]
     if not cmd_args or len(cmd_args) != 2:
-        print help.format(sys.argv[0])
+        print __doc__.format(sys.argv[0])
         sys.exit(1)
 
     reference_pdb, target_pdb = map(os.path.abspath, cmd_args)
